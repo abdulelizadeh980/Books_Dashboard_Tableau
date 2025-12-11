@@ -1,8 +1,6 @@
 # 📚 Goodreads Books Analysis Dashboard  
 ### Tableau Data Visualization Project
 
-![Book Dashboard](Book_Dashboard.png)
-
 This project is an interactive Tableau dashboard built using a Goodreads books dataset.  
 The dashboard provides insights into authors, publishers, publication trends, languages, ratings, and more.  
 It is designed to help users explore large-scale book metadata visually and intuitively.
