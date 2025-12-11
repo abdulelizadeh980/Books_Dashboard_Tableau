@@ -1,131 +1,296 @@
-# 🦠 Covid-19: 7-Day Forecast Using Linear Regression  
-Predicting next 7-days 2019-nCoV cumulative **Confirmed**, **Infected**, **Recovered**, and **Death** cases using a Linear Regression model.
+# 📚 Goodreads Books Analysis Dashboard  
+### Tableau Data Visualization Project
 
 ![Book Dashboard](Book_Dashboard.png)
 
----
-
-## 👋 Welcome
-
-This project analyzes the **Novel Coronavirus 2019 (Covid-19)** dataset and uses a **Linear Regression Model** to forecast the next **7 days** of cumulative case counts.  
-The goal is to develop an analytical understanding of the outbreak pattern and evaluate whether healthcare systems are prepared for possible scenarios.
+This project is an interactive Tableau dashboard built using a Goodreads books dataset.  
+The dashboard provides insights into authors, publishers, publication trends, languages, ratings, and more.  
+It is designed to help users explore large-scale book metadata visually and intuitively.
 
 ---
 
-## 📚 Category  
-**Linear Regression (Supervised Machine Learning)**
+## 🖼 Dashboard Preview
+
+<p align="center">
+  <img src="Book_Dashboard.png" alt="Goodreads Dashboard" width="900">
+</p>
 
 ---
 
-## 📂 Dataset  
-**Dataset Name:** Novel Corona Virus 2019 Dataset  
-**Source:** Kaggle  
-**Link:** https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset  
+## 📊 Project Overview
 
-### 📄 Dataset Description
+The goal of this project is to analyze and visualize key metrics from a large Goodreads dataset, focusing on:
 
-| Column Name       | Description |
-|-------------------|-------------|
-| **SNo** | Serial Number |
-| **ObservationDate** | Observation date in `mm/dd/yyyy` |
-| **Province/State** | Province or State *(əyalət və ya ştat)* |
-| **Country/Region** | Country or region |
-| **Last Update** | Last update date time in UTC |
-| **Confirmed** | Cumulative number of confirmed cases |
-| **Deaths** | Cumulative number of deaths |
-| **Recovered** | Cumulative number of recovered cases |
-| **Infected** | `Confirmed - Recovered - Deaths` *(not a separate column in dataset)* |
+- Publication year trends  
+- Most prolific authors  
+- Most active publishers  
+- Language code distribution  
+- Books with the highest ratings count  
+- Book metadata insights (pages, ratings, reviews, etc.)
+
+The dashboard is built to allow **interactive exploration** through filters, charts, and summary cards.
 
 ---
 
-## 🎯 Task
+## 🔍 Dataset Description
 
-You are a **Data Scientist at the World Health Organization (WHO)**.  
-Due to the outbreak of 2019-nCoV, WHO needs an early predictive model to understand how the virus will spread in the coming days.
+The dataset includes metadata for thousands of books, containing fields such as:
 
-Your tasks are:
+- **Title**
+- **Authors**
+- **Publisher**
+- **Publication date**
+- **Number of pages**
+- **Language codes**
+- **Ratings count**
+- **Text reviews count**
+- **Average ratings**
 
-### ✔ Analyze the Covid-19 dataset  
-### ✔ Build a Linear Regression model  
-### ✔ Predict the next 7 days cumulative:  
-- Confirmed cases  
-- Recovered cases  
-- Death cases  
-- *(Infected = Confirmed − Recovered − Deaths)*  
-
-### ✔ Visualize the results using clear and meaningful charts  
-### ✔ Evaluate model performance
+You used these fields to build the KPIs and charts displayed in the dashboard.
 
 ---
 
-## 🛠 Steps to Follow (Project Workflow)
+## 📌 What I Did in This Project
 
-### 1️⃣ Import required libraries  
-- pandas  
-- numpy  
-- matplotlib / seaborn  
-- scikit-learn (LinearRegression, metrics)
+### ✔ **1. Cleaned & Prepared the Dataset**
+- Removed missing and inconsistent values  
+- Standardized date formats  
+- Cleaned language codes  
+- Combined multi-author fields  
+- Prepared measures and dimensions for Tableau  
 
-### 2️⃣ Load and explore the dataset  
-- Check shape, missing values, data types  
-- Understand data distribution and trends  
+### ✔ **2. Built Interactive Filters**
+- Title  
+- Authors  
+- Publisher  
+- Language codes  
+- Publication date  
+- Number of pages  
+- Ratings count  
+- Reviews count  
+- Average rating  
 
-### 3️⃣ Clean and preprocess data  
-- Parse dates  
-- Handle missing values  
-- Aggregate by date (global or country-level)  
-- Create `Infected` column  
-- Generate time index for regression  
+### ✔ **3. Designed Multiple Visualizations**
+You created meaningful visual components in Tableau, including:
 
-### 4️⃣ Apply Linear Regression model  
-- Train model using time as input feature  
-- Build separate models for Confirmed, Recovered, and Deaths  
+#### 📈 *Books by Publication Date*  
+A line area chart showing the number of books published per year (1900–2020).
 
-### 5️⃣ Evaluate model performance  
-Metrics include:  
-- **R² Score**  
-- **Mean Squared Error (MSE)**  
-- **Mean Absolute Error (optional)**  
+#### 🧑‍💼 *Authors by Total Books*  
+Horizontal bar chart highlighting the most prolific authors  
+(e.g., Stephen King, P.G. Wodehouse, Agatha Christie).
 
-### 6️⃣ Predict and visualize results  
-- Predict next 7 days cumulative values  
-- Plot:  
-  - Actual vs Predicted  
-  - Trend line for the next 7 days  
+#### 🏢 *Publishers by Total Books*  
+Bar chart showing top publishers based on book volume  
+(e.g., Vintage, Penguin Books, Mariner Books).
 
----
+#### 🌍 *Top 10 Language Codes*  
+Circular bar visualization for the most frequent language codes  
+(e.g., eng, en-US, spa).
 
-## 📊 Output Example
+#### ⭐ *Titles by Ratings Count*  
+Ranked list of books with the highest ratings count  
+(e.g., Twilight, The Hobbit, The Catcher in the Rye).
 
-### 📈 Graph  
-- Actual vs Predicted cumulative cases  
-- Forecast extension for next 7 days  
-
-### 📅 Table  
-**Next 7 Days Forecast** with values for:  
-- Confirmed  
-- Recovered  
-- Deaths  
-- (Infected calculated automatically)
-
-### 📐 Model Metrics  
-- **R² score**  
-- **MSE**  
+#### 📘 *Featured Cover Image Section*  
+A central image to visually enhance the storytelling aspect of the dashboard.
 
 ---
 
-## ✅ Summary
+## 🎛 Interactive KPI Cards
 
-This project demonstrates the full pipeline of a data science prediction workflow:  
-✔ Data cleaning  
-✔ Feature engineering  
-✔ Linear Regression modeling  
-✔ Evaluation  
-✔ Forecasting  
-✔ Visualization  
+You added several dynamic summary boxes that change based on user filtering:
 
-It provides a clear and interpretable way to understand Covid-19 growth using a baseline ML model.
+- Title  
+- Authors  
+- Publisher  
+- Language code  
+- Publication date  
+- Ratings count  
+- Number of pages  
+- Text reviews  
+- Average rating  
+
+These KPIs help the user quickly understand the currently selected book or category.
 
 ---
 
-Feel free to explore, modify, or improve this project!
+## 🎨 Dashboard Design Decisions
+
+- Neutral beige/brown color palette for a “bookish” aesthetic  
+- Clean layout with balanced spacing  
+- Symmetrical grid-style dashboard structure  
+- Clear typography for readability  
+- Central hero image for strong visual identity  
+- Dark brown for charts to maintain stylistic consistency  
+
+---
+
+## 🛠 Tools Used
+
+- **Tableau Public / Tableau Desktop**  
+- **Excel / CSV** for dataset storage  
+- **Data cleaning** performed manually or with spreadsheet tools  
+
+---
+
+## 📄 Project Objective
+
+The purpose of this project is to:
+
+- Practice Tableau dashboard design  
+- Explore exploratory data analysis (EDA) with visual storytelling  
+- Transform raw book metadata into actionable insights  
+- Develop your portfolio as a Data Analyst / BI Developer  
+
+---
+
+## 📁 Files in This Repository
+
+# 📚 Goodreads Books Analysis Dashboard  
+### Tableau Data Visualization Project
+
+This project is an interactive Tableau dashboard built using a Goodreads books dataset.  
+The dashboard provides insights into authors, publishers, publication trends, languages, ratings, and more.  
+It is designed to help users explore large-scale book metadata visually and intuitively.
+
+---
+
+## 🖼 Dashboard Preview
+
+<p align="center">
+  <img src="Book_Dashboard.png" alt="Goodreads Dashboard" width="900">
+</p>
+
+---
+
+## 📊 Project Overview
+
+The goal of this project is to analyze and visualize key metrics from a large Goodreads dataset, focusing on:
+
+- Publication year trends  
+- Most prolific authors  
+- Most active publishers  
+- Language code distribution  
+- Books with the highest ratings count  
+- Book metadata insights (pages, ratings, reviews, etc.)
+
+The dashboard is built to allow **interactive exploration** through filters, charts, and summary cards.
+
+---
+
+## 🔍 Dataset Description
+
+The dataset includes metadata for thousands of books, containing fields such as:
+
+- **Title**
+- **Authors**
+- **Publisher**
+- **Publication date**
+- **Number of pages**
+- **Language codes**
+- **Ratings count**
+- **Text reviews count**
+- **Average ratings**
+
+You used these fields to build the KPIs and charts displayed in the dashboard.
+
+---
+
+## 📌 What I Did in This Project
+
+### ✔ **1. Cleaned & Prepared the Dataset**
+- Removed missing and inconsistent values  
+- Standardized date formats  
+- Cleaned language codes  
+- Combined multi-author fields  
+- Prepared measures and dimensions for Tableau  
+
+### ✔ **2. Built Interactive Filters**
+- Title  
+- Authors  
+- Publisher  
+- Language codes  
+- Publication date  
+- Number of pages  
+- Ratings count  
+- Reviews count  
+- Average rating  
+
+### ✔ **3. Designed Multiple Visualizations**
+You created meaningful visual components in Tableau, including:
+
+#### 📈 *Books by Publication Date*  
+A line area chart showing the number of books published per year (1900–2020).
+
+#### 🧑‍💼 *Authors by Total Books*  
+Horizontal bar chart highlighting the most prolific authors  
+(e.g., Stephen King, P.G. Wodehouse, Agatha Christie).
+
+#### 🏢 *Publishers by Total Books*  
+Bar chart showing top publishers based on book volume  
+(e.g., Vintage, Penguin Books, Mariner Books).
+
+#### 🌍 *Top 10 Language Codes*  
+Circular bar visualization for the most frequent language codes  
+(e.g., eng, en-US, spa).
+
+#### ⭐ *Titles by Ratings Count*  
+Ranked list of books with the highest ratings count  
+(e.g., Twilight, The Hobbit, The Catcher in the Rye).
+
+#### 📘 *Featured Cover Image Section*  
+A central image to visually enhance the storytelling aspect of the dashboard.
+
+---
+
+## 🎛 Interactive KPI Cards
+
+You added several dynamic summary boxes that change based on user filtering:
+
+- Title  
+- Authors  
+- Publisher  
+- Language code  
+- Publication date  
+- Ratings count  
+- Number of pages  
+- Text reviews  
+- Average rating  
+
+These KPIs help the user quickly understand the currently selected book or category.
+
+---
+
+## 🎨 Dashboard Design Decisions
+
+- Neutral beige/brown color palette for a “bookish” aesthetic  
+- Clean layout with balanced spacing  
+- Symmetrical grid-style dashboard structure  
+- Clear typography for readability  
+- Central hero image for strong visual identity  
+- Dark brown for charts to maintain stylistic consistency  
+
+---
+
+## 🛠 Tools Used
+
+- **Tableau Public / Tableau Desktop**  
+- **Excel / CSV** for dataset storage  
+- **Data cleaning** performed manually or with spreadsheet tools  
+
+---
+
+## 📄 Project Objective
+
+The purpose of this project is to:
+
+- Practice Tableau dashboard design  
+- Explore exploratory data analysis (EDA) with visual storytelling  
+- Transform raw book metadata into actionable insights  
+- Develop your portfolio as a Data Analyst / BI Developer  
+
+---
+
+## 📁 Files in This Repository
+
